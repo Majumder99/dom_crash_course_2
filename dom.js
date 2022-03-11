@@ -76,15 +76,69 @@
 
 //Query selector all
 
-var titles = document.querySelectorAll(".title");
+// var titles = document.querySelectorAll(".title");
 
-console.log(titles);
-titles[0].textContent = "hello";
-titles[1].innerText = "cook";
+// console.log(titles);
+// titles[0].textContent = "hello";
+// titles[1].innerText = "cook";
 
-var odd = document.querySelectorAll("li:nth-child(odd");
-var even = document.querySelectorAll("li:nth-child(even");
-for (var i = 0; i < odd.length; i++) {
-  odd[i].style.backgroundColor = "red";
-  even[i].style.backgroundColor = "green";
-}
+// var odd = document.querySelectorAll("li:nth-child(odd");
+// var even = document.querySelectorAll("li:nth-child(even");
+// for (var i = 0; i < odd.length; i++) {
+//   odd[i].style.backgroundColor = "red";
+//   even[i].style.backgroundColor = "green";
+// }
+
+// Traversing the dom
+var listItem = document.querySelector("#items");
+// console.log(listItem.parentNode);
+// listItem.parentNode.style.backgroundColor = "red";
+// console.log(listItem.parentNode.parentNode);
+
+//Parentelement is exactly the same as parentnode.
+// just remove the node and element there.
+
+//Children
+// console.log(listItem.childNodes);
+// AMra childnodes use krbo na karon era barti space
+// keo node bole er jnno children use krbo
+// console.log(listItem.children);
+// listItem.children[1].style.backgroundColor = "red";
+
+// //firstchild
+// console.log(listItem.firstChild); //It will take space as a node
+// //Firstelementchild
+// console.log(listItem.firstElementChild);
+// listItem.firstElementChild.innerText = "hellp";
+// //Lastchild
+// console.log(listItem.lastChild); //same as firstchild
+// //Lastelementchild
+// console.log(listItem.lastElementChild);
+// listItem.lastElementChild.innerText = "text";
+// NExt sibiling
+var nextItem = document.querySelector(".title");
+// console.log(nextItem.nextSibling.nextSibling.nextSibling.nextSibling);
+// console.log(nextItem.nextElementSibling);
+
+// console.log(listItem.previousSibling.previousSibling);
+// console.log(listItem.previousElementSibling.previousElementSibling);
+// Creating element
+var newDiv = document.createElement("div");
+
+newDiv.className = "sourav";
+
+newDiv.id = "majumder";
+
+//Add atributes
+newDiv.setAttribute("style", "color:red;font-size:40px;");
+//add child in div
+var childText = document.createTextNode("hello world");
+//append
+newDiv.appendChild(childText);
+console.log(newDiv);
+// Add newdiv into dom
+
+var container = document.querySelector("header .container");
+var header = document.querySelector(".container h1");
+
+container.insertBefore(newDiv, header);
